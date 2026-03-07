@@ -44,8 +44,8 @@ def train(epochs,weights,bias,lr):
             grad= gradiant(pred, target)
             weights,bias = parameter_update(weights,bias,lr,grad,input)
 
-            if epoch % 100 == 0:
-                print(epoch, total_loss)
+        if epoch % 100 == 0:
+            print(epoch, total_loss)
 
     return weights, bias
 
@@ -69,5 +69,7 @@ if __name__ == "__main__":
     bias = random.uniform(-1,1)
 
     weights,bias = train(3000,weights,bias,0.1)
+
+    print(weights,bias)
 
     test(weights,bias)
